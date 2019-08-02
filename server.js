@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Game = require('./models/games.js');
 //___________________
 //Port
 //___________________
@@ -49,12 +50,44 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
+//new Route
+// app.get('/new', (req, res) => {
+//   res.render('new.ejs');
+// })
 
+//create route
+// app.post('/', (req, res) => {
+//   if (req.body.action === 'on') {
+//     req.body.action = true;
+//   } else {
+//     req.body.action = false;
+//   }
+//   if (req.body.puzzle === 'on') {
+//     req.body.puzzle = true;
+//   } else {
+//     req.body.puzzle = false;
+//   }
+//   if (req.body.rpg === 'on') {
+//     req.body.rpg = true;
+//   } else {
+//     req.body.rpg = false;
+//   }
+//   if (req.body.sports === 'on') {
+//     req.body.sports = true;
+//   } else {
+//     req.body.sports = false;
+//   }
+//   Game.create(req.body, (error, createdGame) => {
+//     res.send(createdGame);
+//   });
+// })
 
 //localhost:3000
-app.get('/games' , (req, res) => {
+app.get('/' , (req, res) => {
   res.send('eat at joes!');
 });
+
+
 
 //___________________
 //Listener
