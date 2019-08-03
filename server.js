@@ -54,13 +54,17 @@ app.use(session({
 }));
 
 
-//___________________
+// ___________________
 // Routes
-//___________________
-//new Route
-// app.get('/new', (req, res) => {
-//   res.render('new.ejs');
-// })
+// ___________________
+// new Route for app
+app.get('/app/new', (req, res) => {
+  if (req.session.currentUser) {
+    res.render('app/new.ejs')
+  } else {
+    res.redirect('/sessions/new');
+  }
+})
 
 //create route
 // app.post('/', (req, res) => {
@@ -89,11 +93,6 @@ app.use(session({
 //   });
 // })
 
-// app.use(session({
-//   secret: "feedmeseymour",
-//   resave: false,
-//   saveUninitialized: false
-// }));
 
 //localhost:3000 login index
 app.get('/' , (req, res) => {
