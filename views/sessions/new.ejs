@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+  </head>
+    <body>
+      <div class="container">
+        <h1>Log In</h1>
+        <div class="row">
+          <form class="col s12" action="/sessions" method="POST">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Placeholder" id="username" type="text" class="validate" name="username" required>
+                <label for="username">User Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" name="password" required>
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Add Game To Log</h1>
+        <form action="/" method="POST">
+            Name: <input type="text" name="name" /><br/>
+            Console: <input type="text" name="console" /><br/>
+            Year: <input type="text" name="year" /><br/>
+            Notes: <textarea name="notes" rows="8" cols="80"></textarea><br/>
+            <h3>Genres</h3>
+            Action: <input type="checkbox" name="action" /><br/>
+            Puzzle: <input type="checkbox" name="puzzle" /><br />
+            RPG: <input type="checkbox" name="rpg" /><br />
+            Sports: <input type="checkbox" name="sports" /><br />
+            <input type="submit" name="" value="Post Game"/>
+        </form>
+     </body>
+</html> -->

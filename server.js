@@ -6,7 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-const Game = require('./models/games.js');
+const session = require('express-session');
+// const Game = require('./models/games.js');
 //___________________
 //Port
 //___________________
@@ -46,6 +47,12 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.use(session({
+  secret: "feedmeseymour",
+  resave: false,
+  saveUninitialized: false
+}));
+
 
 //___________________
 // Routes
@@ -82,12 +89,25 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //   });
 // })
 
+// app.use(session({
+//   secret: "feedmeseymour",
+//   resave: false,
+//   saveUninitialized: false
+// }));
+
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('eat at joes!');
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  });
 });
 
+///controllers
+const userController = require('./controllers/users.js');
+app.use('/users', userController);
 
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 //___________________
 //Listener
