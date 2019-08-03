@@ -127,15 +127,51 @@ app.delete('/app/:id', (req, res) => {
   }
 });
 
-
-
-
-//localhost:3000 login index
-app.get('/' , (req, res) => {
-  res.render('index.ejs', {
-    currentUser: req.session.currentUser
+//edit route for app
+app.get('/app/:id/edit', (req, res) => {
+  if (req.session.currentUser) {
+    Game.findById(req.params.id, (err, foundGame) => {
+    res.render('app/edit.ejs', {
+      game: foundGame
+      }
+    )
   });
+} else {
+  res.redirect('/sessions/new');
+  }
 });
+
+//put route for app
+app.put('/app/:id', (req, res) => {
+    if (req.session.currentUser) {
+      if (req.body.action === 'on') {
+        req.body.action = true;
+      } else {
+        req.body.action = false;
+      }
+      if (req.body.puzzle === 'on') {
+        req.body.puzzle = true;
+      } else {
+        req.body.puzzle = false;
+      }
+      if (req.body.rpg === 'on') {
+        req.body.rpg = true;
+      } else {
+        req.body.rpg = false;
+      }
+      if (req.body.sports === 'on') {
+        req.body.sports = true;
+      } else {
+        req.body.sports = false;
+      }
+      Game.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedModel) => {
+        res.redirect('/app');
+      })
+    } else {
+      res.redirect('/sessions/new');
+    }
+})
+
 
 ///index for app
 app.get('/app', (req, res) => {
@@ -150,6 +186,16 @@ app.get('/app', (req, res) => {
     res.redirect('/sessions/new');
   }
 });
+
+
+//localhost:3000 login index
+app.get('/' , (req, res) => {
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
+
+
 
 ///controllers
 const userController = require('./controllers/users.js');
