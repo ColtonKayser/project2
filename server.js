@@ -7,7 +7,8 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const session = require('express-session');
-// const Game = require('./models/games.js');
+const Game = require('./models/games.js');
+
 //___________________
 //Port
 //___________________
@@ -57,6 +58,8 @@ app.use(session({
 // ___________________
 // Routes
 // ___________________
+
+
 // new Route for app
 app.get('/app/new', (req, res) => {
   if (req.session.currentUser) {
@@ -66,32 +69,53 @@ app.get('/app/new', (req, res) => {
   }
 })
 
-//create route
-// app.post('/', (req, res) => {
-//   if (req.body.action === 'on') {
-//     req.body.action = true;
-//   } else {
-//     req.body.action = false;
-//   }
-//   if (req.body.puzzle === 'on') {
-//     req.body.puzzle = true;
-//   } else {
-//     req.body.puzzle = false;
-//   }
-//   if (req.body.rpg === 'on') {
-//     req.body.rpg = true;
-//   } else {
-//     req.body.rpg = false;
-//   }
-//   if (req.body.sports === 'on') {
-//     req.body.sports = true;
-//   } else {
-//     req.body.sports = false;
-//   }
-//   Game.create(req.body, (error, createdGame) => {
-//     res.send(createdGame);
-//   });
-// })
+//show route for app
+app.get('/app/:id', (req, res) => {
+  if (req.session.currentUser) {
+  Game.findById(req.params.id, (err, foundGame) => {
+    res.render('app/show.ejs', {
+      game: foundGame
+    });
+  });
+} else {
+  res.redirect('/sessions/new');
+  }
+});
+
+//create route for app
+app.post('/app', (req, res) => {
+  if (req.session.currentUser) {
+    if (req.body.action === 'on') {
+      req.body.action = true;
+    } else {
+      req.body.action = false;
+    }
+    if (req.body.puzzle === 'on') {
+      req.body.puzzle = true;
+    } else {
+      req.body.puzzle = false;
+    }
+    if (req.body.rpg === 'on') {
+      req.body.rpg = true;
+    } else {
+      req.body.rpg = false;
+    }
+    if (req.body.sports === 'on') {
+      req.body.sports = true;
+    } else {
+      req.body.sports = false;
+    }
+    Game.create(req.body, (error, createdGame) => {
+      res.redirect('/app');
+    })
+    } else {
+      res.redirect('/sessions/new');
+    }
+  });
+
+
+
+
 
 
 //localhost:3000 login index
@@ -104,7 +128,12 @@ app.get('/' , (req, res) => {
 ///index for app
 app.get('/app', (req, res) => {
   if (req.session.currentUser) {
-    res.render('app/index.ejs')
+    Game.find({}, (error, allGames) => {
+      res.render('app/index.ejs', {
+        games: allGames
+      })
+    })
+    // res.render('app/index.ejs')
   } else {
     res.redirect('/sessions/new');
   }

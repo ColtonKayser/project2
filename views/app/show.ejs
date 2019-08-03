@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%=game.name%></h1>
+    <img src="<%=game.img%>" alt="">
+    <h3><%=game.year%></h3>
+    <h3>Notes</h3>
+    <p><%=game.notes%></p>
+    <h3>Genre</h3>
+    <ul>
+    <% if (game.action === true) { %>
+      <li>Action</li>
+  <% } %>
+    <% if (game.puzzle === true) { %>
+      <li>Puzzle</li>
+  <% } %>
+    <% if (game.rpg === true) { %>
+      <li>RPG</li>
+  <% } %>
+    <% if (game.sports === true) { %>
+      <li>Sports</li>
+  <% } %>
+  </ul>
+  <nav>
+    <a href="/app">Back to Game Log</a>
+  </nav>
+  </body>
+</html>

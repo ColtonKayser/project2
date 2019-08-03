@@ -4,6 +4,13 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
+    <nav><a href="/app/new">Add Game</a></nav>
     <h1>8-bit Backlog</h1>
+    <% for (let i = 0; i < games.length; i++) { %>
+    <a href="/app/<%=games[i].id%>"> <img src="<%=games[i].img%>" alt="">
+    </a>
+    <h3><%=games[i].name%></h3>
+    <h3><%=games[i].year%></h3>
+    <% } %>
   </body>
 </html>
