@@ -16,11 +16,18 @@ sessions.post('/', (req, res) => {
     } else {
       if (req.body.password == foundUser.password) {
         req.session.currentUser = foundUser;
-        res.redirect('/');
+        res.redirect('/app');
       } else {
         res.send('<a href="/"> Wrong Password</a>');
       }
     }
-  })
-})
+  });
+});
+
+sessions.delete('/', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+  });
+});
+
 module.exports = sessions;

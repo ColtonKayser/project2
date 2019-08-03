@@ -95,11 +95,20 @@ app.use(session({
 //   saveUninitialized: false
 // }));
 
-//localhost:3000
+//localhost:3000 login index
 app.get('/' , (req, res) => {
   res.render('index.ejs', {
     currentUser: req.session.currentUser
   });
+});
+
+///index for app
+app.get('/app', (req, res) => {
+  if (req.session.currentUser) {
+    res.render('app/index.ejs')
+  } else {
+    res.redirect('/sessions/new');
+  }
 });
 
 ///controllers
