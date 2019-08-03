@@ -8,6 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 const session = require('express-session');
 const Game = require('./models/games.js');
+const morgan = require('morgan');
 
 //___________________
 //Port
@@ -47,6 +48,8 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(morgan('tiny'));
+
 
 app.use(session({
   secret: "feedmeseymour",
@@ -113,7 +116,16 @@ app.post('/app', (req, res) => {
     }
   });
 
-
+//delete route for app
+app.delete('/app/:id', (req, res) => {
+  if (req.session.currentUser) {
+  Game.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/app');
+  });
+} else {
+  res.redirect('/sessions/new');
+  }
+});
 
 
 

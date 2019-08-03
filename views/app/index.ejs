@@ -11,6 +11,9 @@
     </a>
     <h3><%=games[i].name%></h3>
     <h3><%=games[i].year%></h3>
+    <form action="/app/<%=games[i].id%>?_method=DELETE" method="POST">
+      <input type="submit" name="" value="Delete"/>
+    </form>
     <% } %>
   </body>
 </html>
