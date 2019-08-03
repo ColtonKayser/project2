@@ -11,7 +11,7 @@
         Console: <input type="text" name="console" value="<%=game.console%>"/><br/>
         Year: <input type="text" name="year" value="<%=game.year%>"/><br/>
         Image URL: <input type="text" name="img" value="<%=game.img%>"><br />
-        Notes: <textarea name="notes" value="<%=game.notes%> rows="8" cols="80"></textarea><br/>
+        Notes: <textarea name="notes" rows="8" cols="80"><%=game.notes%></textarea><br/>
         <h3>Genres</h3>
         Action: <input type="checkbox" name="action"
         <% if (game.action === true) { %>
