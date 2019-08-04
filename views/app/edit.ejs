@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
     <h1>Edit Game</h1>
@@ -13,26 +12,41 @@
         Image URL: <input type="text" name="img" value="<%=game.img%>"><br />
         Notes: <textarea name="notes" rows="8" cols="80"><%=game.notes%></textarea><br/>
         <h3>Genres</h3>
-        Action: <input type="checkbox" name="action"
-        <% if (game.action === true) { %>
-          checked
-        <% } %> />
+        <!-- Checkbox for Action -->
+        <label>
+          <input type="checkbox" name="action"
+          <% if (game.action === true) { %>
+            checked
+          <% } %> />
+          <span>Action</span>
+        </label>
         <br/>
-        Puzzle: <input type="checkbox" name="puzzle"
-        <% if (game.puzzle === true) { %>
+        <!-- Checkbox for Puzzle -->
+        <label>
+          <input type="checkbox" name="puzzle"
+          <% if (game.puzzle === true) { %>
+            checked
+            <% } %>/>
+            <span>Puzzle</span>
+        </label>
+        <br />
+        <!-- Checbox for RPG -->
+        <label>
+          <input type="checkbox" name="rpg"
+          <% if (game.rpg === true) { %>
           checked
-        <% } %>
-        /><br />
-        RPG: <input type="checkbox" name="rpg"
-        <% if (game.rpg === true) { %>
-          checked
-         <% } %>
-        /><br />
-        Sports: <input type="checkbox" name="sports"
-        <% if (game.sports === true) { %>
-          checked
-        <% } %>
-        /><br />
+          <% } %>/>
+          <span>RPG</span>
+        </label>
+        <br />
+        <!-- Checkbox for Sports -->
+        <label>
+          <input type="checkbox" name="sports"
+          <% if (game.sports === true) { %>
+            checked
+          <% } %>/>
+          <span>Sports</span>
+          <br />
         <input type="submit" name="" value="Submit Changes">
     </form>
   </body>

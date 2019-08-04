@@ -1,0 +1,33 @@
+body {
+  background-color: lightblue;
+}
+
+.card {
+  width: 200px;
+  height: 50px;
+}
+
+.card-content {
+  background-color: whitesmoke;
+  height: 20px
+  padding: 0px;
+}
+
+.card-content p {
+  margin-bottom: 20px;
+}
+.card-action {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.c-text {
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
