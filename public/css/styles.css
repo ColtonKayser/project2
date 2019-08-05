@@ -110,15 +110,16 @@ header {
 
 .container {
   /* display: flex; */
-  /* width: 100%; */
+  width: 98%;
   text-align: center;
   justify-content: center;
+
   /* flex-wrap: wrap; */
 }
 
 .card {
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   margin-bottom: 200px;
   margin-right: -10px;
   /* background-color: rgb(192,192,192); */
@@ -128,27 +129,28 @@ header {
   background-color: rgb(186,85,211);
   height: 100px;
   border-radius: 0px;
+
 }
 
 
 .card-content p {
   margin-bottom: 20px;
   text-align: left;
-  font-size: 30px;
-
+  font-size: 23px;
+  width: 100%;
 }
 
 .card-action {
   display: flex;
   justify-content: center;
-  font-size: 20px;
+  font-size: 18px;
   background-color: rgb(186,85,211);
   margin-top: -1.5px;
 }
 
 .c-text {
   margin-bottom: -20px;
-  margin-top: -20px;
+  margin-top: -15px;
   text-align: left;
 
   margin-left: -10px;
@@ -171,7 +173,7 @@ header {
 
 .col {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   /* margin: 0 auto; */
   /* width: 22.5%; */
 }
@@ -275,4 +277,5 @@ header {
   text-align: center;
   /* background-color: rgb(220,20,60); */
   margin-top: 10px;
+  font-size: 20px;
 }
