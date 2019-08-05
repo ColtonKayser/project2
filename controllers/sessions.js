@@ -13,13 +13,13 @@ sessions.post('/', (req, res) => {
       console.log(err);
       res.send('db has issue');
     } else if (!foundUser) {
-      res.send('<a href="/">User Not Found</a>');
+      res.render('error.ejs');
     } else {
       if ( bcrypt.compareSync (req.body.password, foundUser.password)) {
         req.session.currentUser = foundUser;
         res.redirect('/app');
       } else {
-        res.send('<a href="/"> Wrong Password</a>');
+        res.render('error.ejs');
       }
     }
   });
