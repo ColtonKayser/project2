@@ -9,19 +9,21 @@
         <% if (currentUser) { %>
         Welcome <%= currentUser.username%>!
       </h1>
+      <div class="index-index">
       <h3>
-        <a href="/app">Start Loggin'</a>
+        <a class="index-index amber-text" href="/app">Start Loggin'</a>
       </h3>
-      <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" name="" value="Log Out">
+      <form class="index-index" action="/sessions?_method=DELETE" method="POST">
+        <input class="index-index logout waves-effect waves-light btn-small" type="submit" name="" value="Log Out">
       </form>
+      </div>
       <% } else { %>
         <div class="splash">
         <h1>Welcome to 8-Bit Backlog</h1>
           <h3 class="amber-text">Now You're Loggin' With Power<h3>
           <div class="splash-button">
-          <h5><a class="waves-effect waves-light btn red darken-1" href="/users/new">Sign Up</a></h5>
-          <a class="waves-effect waves-light btn red darken-1" href="/sessions/new">Log In</a>
+          <h5><a class="waves-effect waves-light btn purple accent-2" href="/users/new">Sign Up</a></h5>
+          <a class="waves-effect waves-light btn purple accent-2" href="/sessions/new">Log In</a>
         </div>
         </div>
           <% } %>

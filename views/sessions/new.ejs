@@ -4,17 +4,18 @@
     <% include ../partials/head.ejs %>
   </head>
     <body>
-      <div class="container1">
-        <h1>Log In</h1>
-        <div class="row">
-          <form class="col center-align" action="/sessions" method="POST">
-            <div class="row">
+
+        <h1 class="login-h1">Log In</h1>
+        <div class="container-signup">
+        <div class="row signup-login">
+          <form class="col input-login" action="/sessions" method="POST">
+            <div class="row signup-login-row">
               <div class="input-field col">
-                <input placeholder="Placeholder" id="username" type="text" class="validate" name="username" required>
+                <input placeholder="Placeholder" id="username" type="text" class="validate li-input" name="username" required>
                 <label for="username">User Name</label>
               </div>
             </div>
-            <div class="row">
+            <div class="row signup-login-row">
               <div class="input-field col">
                 <input id="password" type="password" class="validate" name="password" required>
                 <label for="password">Password</label>

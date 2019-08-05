@@ -4,23 +4,24 @@
     <% include ../partials/head.ejs %>
   </head>
     <body>
-      <div class="container">
-        <h1>Create User</h1>
-        <div class="row">
-          <form class="col s12" action="/users" method="POST">
-            <div class="row">
-              <div class="input-field col s6">
+
+        <h1 class="login-h1">Create User</h1>
+        <div class="container-signup">
+        <div class="row signup-login">
+          <form class="col input-login" action="/users" method="POST">
+            <div class="row signup-login-row">
+              <div class="input-field col">
                 <input placeholder="Placeholder" id="username" type="text" class="validate" name="username" required>
                 <label for="username">User Name</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
+            <div class="row signup-login-row">
+              <div class="input-field col">
                 <input id="password" type="password" class="validate" name="password" required>
                 <label for="password">Password</label>
               </div>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light purple accent-2" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
           </form>

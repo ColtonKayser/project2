@@ -22,6 +22,7 @@ main {
 
 input {
   color: white;
+  font-family: 'Righteous';
 }
 
 textarea {
@@ -29,6 +30,16 @@ textarea {
 }
 
 /* Splash Page Styling */
+
+.index-index {
+  margin: 0 auto;
+  font-family: 'Righteous';
+  text-align: center;
+}
+
+.index-index a {
+  text-decoration: underline;
+}
 
 .splash h1 {
   margin-top: 30px;
@@ -40,6 +51,25 @@ textarea {
 
 .splash-button {
   display: inline-block;
+}
+
+/* Log in/Sign up Page Styling */
+.container-signup {
+  text-align: center;
+  margin: 0 auto;
+  /* margin-left: 200px; */
+  width: 22.5%;
+}
+
+.signup-login-row {
+  text-align: center;
+  margin-left: 200px;
+  width: 30%;
+}
+
+.login-h1{
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* Nav styling */
@@ -164,7 +194,7 @@ header {
   font-size: 20px;
 }
 
-/* New Page Styling */
+/* New/Edit Pages Styling */
 
 .new-form-container {
   display: flex;
@@ -197,6 +227,10 @@ header {
   margin-bottom: -10px;
 }
 
+.check-out1 h3 {
+  margin-bottom: 20px;
+}
+
 .check-out span {
   font-size: 20px;
 }
@@ -210,6 +244,10 @@ header {
 
 .post {
   margin-top: 10px;
+}
+
+.edit-genre {
+  marging-top: 10px;
 }
 /* footer styling */
  footer {
