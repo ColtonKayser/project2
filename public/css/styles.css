@@ -164,6 +164,53 @@ header {
   font-size: 20px;
 }
 
+/* New Page Styling */
+
+.new-form-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.new-form-container h3 {
+  font-size: 20px;
+}
+.new-form-container form {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+.new-form {
+  width: 60%;
+  margin-left: 25%;
+  /* margin-right: -200px; */
+  font-family: 'Righteous';
+}
+
+.check-out {
+  margin-right: 25%;
+  /* margin-left: 0px; */
+}
+
+.check-out h3 {
+  font-size: 25px;
+  margin-bottom: -10px;
+}
+
+.check-out span {
+  font-size: 20px;
+}
+.new-form input {
+  font-family: 'Righteous';
+}
+
+.new-form textarea{
+  font-family: 'Righteous';
+}
+
+.post {
+  margin-top: 10px;
+}
 /* footer styling */
  footer {
   text-align: center;
