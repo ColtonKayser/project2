@@ -3,28 +3,27 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-    <body>
-
-        <h1 class="login-h1">Create User</h1>
-        <div class="container-signup">
-        <div class="row signup-login">
-          <form class="col input-login" action="/users" method="POST">
-            <div class="row signup-login-row">
-              <div class="input-field col unli-input col1">
-                <input placeholder="User Name" id="username" type="text" class="validate" name="username" required>
-                <label for="username">User Name</label>
-              </div>
-            </div>
-            <div class="row signup-login-row">
-              <div class="input-field col unli-input col1">
-                <input placeholder="Password" id="password" type="password" class="validate" name="password" required>
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <button class="login-create-btn btn-large waves-effect waves-light purple accent-2" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </form>
+  <body>
+    <h1 class="login-h1">Create User</h1>
+    <div class="container-signup">
+      <div class="row signup-login">
+        <form class="col input-login" action="/users" method="POST">
+        <div class="row signup-login-row">
+          <div class="input-field col unli-input col1">
+            <input placeholder="User Name" id="username" type="text" class="validate" name="username" required>
+            <label for="username">User Name</label>
+          </div>
         </div>
-    </body>
+          <div class="row signup-login-row">
+            <div class="input-field col unli-input col1">
+              <input placeholder="Password" id="password" type="password" class="validate" name="password" required>
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <button class="login-create-btn btn-large waves-effect waves-light purple accent-2" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+  </body>
 </html>
