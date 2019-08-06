@@ -4,6 +4,7 @@
   <% include ../partials/head.ejs %>
   </head>
   <body>
+    <main>
     <div class="show-container">
       <h1><%=game.name%></h1>
       <img src="<%=game.img%>" alt="">
@@ -25,8 +26,11 @@
           <li>Sports</li>
           <% } %>
     </ul>
-  <nav>
-    <a href="/app">Back to Game Log</a>
-  </nav>
+  </main>
+  <footer class="red darken-1 show-footer">
+    <div class="show-link">
+      <a href="/app">Back to Game Log</a>
+    </div>
+  </footer>
   </body>
 </html>

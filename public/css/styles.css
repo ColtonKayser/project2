@@ -215,6 +215,18 @@ header {
   font-size: 20px;
 }
 
+.show-footer {
+  height: 70px;
+}
+
+.show-link {
+  margin-top: 17.5px;
+}
+
+.show-link a {
+  color: white;
+  text-decoration: none;
+}
 /* New/Edit Pages Styling */
 
 .new-form-container {
@@ -238,7 +250,7 @@ header {
 .new-form {
   width: 60%;
   margin-left: 25%;
-  /* margin-right: -200px; */
+  font-size: 30px;
   font-family: 'Righteous';
 }
 
@@ -259,6 +271,7 @@ header {
 }
 .new-form input {
   font-family: 'Righteous';
+
 }
 
 .new-form textarea{
@@ -271,6 +284,18 @@ header {
 
 .h3-large {
   font-size: 70px;
+}
+
+.span {
+  font-size: 50px;
+}
+
+.genre-header {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+.font {
+  font-size: 20px;
 }
 /* footer styling */
  footer {

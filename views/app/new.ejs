@@ -4,6 +4,7 @@
         <% include ../partials/head.ejs %>
     </head>
     <body>
+      <main>
         <h1>Add Game To Log</h1>
         <div class="new-form-container">
           <div class="fill-in">
@@ -19,27 +20,33 @@
             <br />
             <label>
               <input type="checkbox" name="action" />
-              <span class="white-text">Action</span>
+              <span class="span white-text">Action</span>
             </label>
             <br/>
             <label>
               <input type="checkbox" name="puzzle" />
-              <span class="white-text">Puzzle</span>
+              <span class="span white-text">Puzzle</span>
             </label>
             <br/>
             <label>
               <input type="checkbox" name="rpg" />
-              <span class="white-text">RPG</span>
+              <span class="span white-text">RPG</span>
             </label>
             <br/>
             <label>
               <input type="checkbox" name="sports" />
-              <span class="white-text">Sports</span>
+              <span class="span white-text">Sports</span>
             </label>
             <br/>
             <input class="purple accent-2 post btn-large" type="submit" name="" value="Post Game"/>
           </div>
         </form>
       </div>
+    </main>
+    <footer class="red darken-1 show-footer">
+      <div class="show-link">
+        <a href="/app">Back to Game Log</a>
+      </div>
+    </footer>
      </body>
 </html>
