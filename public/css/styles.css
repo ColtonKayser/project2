@@ -64,13 +64,19 @@ textarea {
 
 .signup-login-row {
   text-align: center;
-  margin-left: 200px;
+  margin: 0 auto;
   width: 30%;
+}
+
+.unli-input {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .login-h1{
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .login-create-btn {
@@ -303,4 +309,9 @@ header {
   /* background-color: rgb(220,20,60); */
   margin-top: 10px;
   font-size: 20px;
+}
+
+/* Seperate column class for login/signup */
+.col1 {
+  margin-bottom: 10px;
 }
