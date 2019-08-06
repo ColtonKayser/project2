@@ -63,7 +63,7 @@ app.use(session({
 // ___________________
 
 
-// new Route for app
+// new route for app
 app.get('/app/new', (req, res) => {
   if (req.session.currentUser) {
     res.render('app/new.ejs')

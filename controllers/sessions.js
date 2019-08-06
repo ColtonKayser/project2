@@ -1,12 +1,15 @@
+//Dependencies
 const express = require('express');
 const sessions = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
+//new route for sessions
 sessions.get('/new', (req, res) => {
   res.render('sessions/new.ejs')
 });
 
+//post route for sessions
 sessions.post('/', (req, res) => {
   User.findOne({ username: req.body.username}, (err, foundUser) => {
     if (err) {
@@ -25,6 +28,7 @@ sessions.post('/', (req, res) => {
   });
 });
 
+//log out 
 sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
     res.redirect('/');
