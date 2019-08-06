@@ -5,48 +5,48 @@
   </head>
   <body>
     <header>
-    <a href="/app/new" class="waves-effect waves-light btn-large btn-floating red darken-1"><i class="material-icons">add</i></a>
-    <!-- <a href="/app/new">Add Game</a> -->
-    <form action="/sessions?_method=DELETE" class="delete-font" method="POST">
-      <input class="logout waves-effect waves-light btn-small" type="submit" name="" value="Log Out">
-    </form>
+      <!-- Add game button -->
+      <a href="/app/new" class="waves-effect waves-light btn-large btn-floating red darken-1"><i class="material-icons">add</i>
+      </a>
+      <!-- Logout Button -->
+      <form action="/sessions?_method=DELETE" class="delete-font" method="POST">
+        <input class="logout waves-effect waves-light btn-small" type="submit" name="" value="Log Out">
+      </form>
     </header>
     <main>
-    <h1>8-Bit Backlog</h1>
-
-
-    <div class="container">
-    <div class="row">
-    <% for (let i = 0; i < games.length; i++) { %>
-
-      <div class="col">
-        <div class="card">
-          <div class="card-image">
-            <a href="/app/<%=games[i].id%>">
-              <img src="<%=games[i].img%>" alt="">
-            </a>
-          </div>
-          <div class="card-content">
-            <div class="c-text">
-              <p><%=games[i].name%></p>
-              <p><%=games[i].year%></p>
+      <h1>8-Bit Backlog</h1>
+      <div class="container">
+        <div class="row">
+          <!-- creates card for each game -->
+          <% for (let i = 0; i < games.length; i++) { %>
+            <div class="col">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/app/<%=games[i].id%>">
+                  <img src="<%=games[i].img%>" alt="">
+                  </a>
+                </div>
+                <div class="card-content">
+                  <div class="c-text">
+                    <p><%=games[i].name%></p>
+                    <p><%=games[i].year%></p>
+                  </div>
+                </div>
+                <div class="card-action actionaction">
+                  <a class="purple-text text-accent-2" href="/app/<%=games[i].id%>">Info</a>
+                  <a class="purple-text text-accent-2" href="/app/<%=games[i].id%>/edit">Edit</a>
+                  <form action="/app/<%=games[i].id%>?_method=DELETE" method="POST">
+                    <input class="delete-font amber-text" type="submit" name="" value="Delete"/>
+                  </form>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card-action actionaction">
-            <a class="purple-text text-accent-2" href="/app/<%=games[i].id%>">Info</a>
-            <a class="purple-text text-accent-2" href="/app/<%=games[i].id%>/edit">Edit</a>
-            <form action="/app/<%=games[i].id%>?_method=DELETE" method="POST">
-              <input class="delete-font amber-text" type="submit" name="" value="Delete"/>
-            </form>
-          </div>
+            <% } %>
         </div>
       </div>
-    <% } %>
-    </div>
-  </div>
-</main>
-  <footer class="red darken-1">
+    </main>
+    <footer class="red darken-1">
       <p>Created By Colton Kayser</p>
-  </footer>
+    </footer>
   </body>
 </html>

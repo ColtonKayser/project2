@@ -6,15 +6,16 @@
   <body>
     <main>
     <h1>Edit Game</h1>
+    <!-- Form Inputs for Edit Page -->
     <div class="new-form-container">
       <div class="fill-in">
-    <form class="new-form" action="/app/<%=game.id%>?_method=PUT" method="POST">
-        Name: <input class="font" type="text" name="name" value="<%=game.name%>" /><br/>
-        Console: <input class="font" type="text" name="console" value="<%=game.console%>"/><br/>
-        Year: <input class="font" type="text" name="year" value="<%=game.year%>"/><br/>
-        Image URL: <input class="font" type="text" name="img" value="<%=game.img%>"><br />
-        Notes: <textarea class="font" name="notes" rows="8" cols="80"><%=game.notes%></textarea><br/>
-      </div>
+        <form class="new-form" action="/app/<%=game.id%>?_method=PUT" method="POST">
+          Name: <input class="font" type="text" name="name" value="<%=game.name%>" /><br/>
+          Console: <input class="font" type="text" name="console" value="<%=game.console%>"/><br/>
+          Year: <input class="font" type="text" name="year" value="<%=game.year%>"/><br/>
+          Image URL: <input class="font" type="text" name="img" value="<%=game.img%>"><br />
+          Notes: <textarea class="font" name="notes" rows="8" cols="80"><%=game.notes%></textarea><br/>
+        </div>
       <div class="check-out">
         <div class="genre-header">
           <h3 class="check-out1">Genres</h3>
@@ -24,7 +25,7 @@
           <input class="edit-genre" type="checkbox" name="action"
           <% if (game.action === true) { %>
             checked
-          <% } %> />
+            <% } %> />
           <span class="white-text">Action</span>
         </label>
         <br/>
@@ -34,7 +35,7 @@
           <% if (game.puzzle === true) { %>
             checked
             <% } %>/>
-            <span class="white-text">Puzzle</span>
+          <span class="white-text">Puzzle</span>
         </label>
         <br />
         <!-- Checkbox for RPG -->
@@ -55,10 +56,10 @@
           <span class="white-text">Sports</span>
           <br />
         <input class="purple accent-2 post btn" type="submit" name="" value="Submit Changes">
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</main>
+    </main>
   <footer class="red darken-1 show-footer">
     <div class="show-link">
       <a href="/app">Back to Game Log</a>

@@ -5,15 +5,15 @@
   </head>
   <body>
     <main>
-    <div class="show-container">
-      <h1><%=game.name%></h1>
-      <img src="<%=game.img%>" alt="">
-      <h3><%=game.year%></h3>
-      <h3>Notes</h3>
-      <p><%=game.notes%></p>
-      <h3>Genre</h3>
-      <ul>
-        <% if (game.action === true) { %>
+      <div class="show-container">
+        <h1><%=game.name%></h1>
+        <img src="<%=game.img%>" alt="">
+        <h3><%=game.year%></h3>
+        <h3>Notes</h3>
+        <p><%=game.notes%></p>
+        <h3>Genre</h3>
+        <ul>
+          <% if (game.action === true) { %>
           <li>Action</li>
           <% } %>
           <% if (game.puzzle === true) { %>
@@ -25,12 +25,12 @@
           <% if (game.sports === true) { %>
           <li>Sports</li>
           <% } %>
-    </ul>
-  </main>
-  <footer class="red darken-1 show-footer">
-    <div class="show-link">
-      <a href="/app">Back to Game Log</a>
-    </div>
-  </footer>
+        </ul>
+      </main>
+      <footer class="red darken-1 show-footer">
+        <div class="show-link">
+          <a href="/app">Back to Game Log</a>
+        </div>
+      </footer>
   </body>
 </html>
